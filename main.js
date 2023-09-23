@@ -1,4 +1,3 @@
-"use strict";
 const scoreTable = document.querySelector(".score-table"),
   rndBtn = document.querySelector(".rndBtn"),
   randomNum = document.querySelectorAll(".random-num"),
@@ -39,48 +38,16 @@ checkBtns.forEach((btn) => {
         event.target.textContent
       ) {
         if (board.querySelectorAll(".greenCole").length) {
-          board.querySelectorAll(".cole").forEach((col, ind, ar) => {
-            if (col.classList.contains("greenCole")) {
-              if (
-                board
-                  .querySelectorAll(".cole")
-                  [
-                    board.querySelectorAll(".cole").length - 1
-                  ].classList.contains("greenCole")
-              ) {
-                board.querySelectorAll(".cole")[
-                  board.querySelectorAll(".cole").length - 1
-                ].innerHTML += '<span class="green">+</span>';
-              } else {
-                board.innerHTML +=
-                  '<div class="cole greenCole"><span class="green">+</span></div>';
-              }
-            }
-          });
+          board.lastElementChild.classList.contains('greenCole') ? board.lastElementChild.innerHTML += '<span class="green">-</span>' : board.innerHTML +=
+          '<div class="cole greenCole"><span class="green">+</span></div>';
         } else {
           board.innerHTML +=
-            '<div class="cole greenCole"><span class="green">+</span></div>';
+          '<div class="cole greenCole"><span class="green">+</span></div>';
         }
       } else {
         if (board.querySelectorAll(".redCole").length) {
-          board.querySelectorAll(".cole").forEach((col, ind, ar) => {
-            if (col.classList.contains("redCole")) {
-              if (
-                board
-                  .querySelectorAll(".cole")
-                  [
-                    board.querySelectorAll(".cole").length - 1
-                  ].classList.contains("redCole")
-              ) {
-                board.querySelectorAll(".cole")[
-                  board.querySelectorAll(".cole").length - 1
-                ].innerHTML += '<span class="red">-</span>';
-              } else {
-                board.innerHTML +=
-                  '<div class="cole redCole"><span class="red">-</span></div>';
-              }
-            }
-          });
+          board.lastElementChild.classList.contains('redCole') ? board.lastElementChild.innerHTML += '<span class="red">-</span>' : board.innerHTML +=
+          '<div class="cole redCole"><span class="red">-</span></div>';
         } else {
           board.innerHTML +=
             '<div class="cole redCole"><span class="red">-</span></div>';
