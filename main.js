@@ -38,7 +38,7 @@ checkBtns.forEach((btn) => {
         event.target.textContent
       ) {
         if (board.querySelectorAll(".greenCole").length) {
-          board.lastElementChild.classList.contains('greenCole') ? board.lastElementChild.innerHTML += '<span class="green">-</span>' : board.innerHTML +=
+          board.lastElementChild.classList.contains('greenCole') ? board.lastElementChild.innerHTML += '<span class="green">+</span>' : board.innerHTML +=
           '<div class="cole greenCole"><span class="green">+</span></div>';
         } else {
           board.innerHTML +=
